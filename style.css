@@ -1,0 +1,318 @@
+/* 全局樣式 */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+    background-color: #d3dcd8; /* 使用指定的背景色 */
+    color: #585257; /* 全局文字顏色 */
+    animation: fadeIn 1s ease-in-out; /* 頁面淡入動畫 */
+    place-items: center;
+}
+
+/* 主容器樣式 */
+.container {
+    max-width: 800px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #fff; /* 白色背景容器 */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    text-align: center;
+    transform: scale(0.9);
+    animation: popIn 0.8s ease forwards; /* 彈入動畫 */
+}
+
+/* 隱藏元素的樣式 */
+.hidden {
+    display: none;
+}
+
+.mybox {
+    background-color: #d3dcd8;  /* 背景色 */
+    border-radius: 5px;
+    margin: 20px 5px; /* 外側的間距 */
+    padding: 30px 20px 20px 20px; /* 內側的間距 */
+    position: relative;
+    z-index: 0;
+}
+
+.mybox:before {
+    border: 1px solid #fff; /* 白色實線邊框 */
+    border-radius: 5px;
+    content: '';
+    display: block;
+    margin: 4px;
+    position: absolute;
+    top: 0px;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+    z-index: -1;
+}
+
+.mybox:after {
+    background-color: #b3c8c9;  /* 透明的背景色 */
+    background-image: radial-gradient(#fff 20%, transparent 0), radial-gradient(#fff 20%, transparent 0); /* 水玉背景 */
+    background-position: 0 0, 8px 8px;  /* 水玉的間距 */
+    background-size: 15px 15px; /* 水玉的大小 */
+    border-left: 2px dotted rgba(0, 0, 0, 0.1);
+    border-right: 2px dotted rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+    content: 'Compare & Choose';
+    display: block;
+    padding: 5px 20px;  
+    text-align: center;
+    position: absolute;
+    top: -10px;
+    left: 20px;
+    transform: rotate(-3deg);
+    font-family: "Comic Sans MS";
+    font-size: large;
+}
+
+h1 {
+    color: #585257; 
+    text-align: center;
+    font-size: 36px;
+    font-family: "Comic Sans MS";
+    font-weight: bold;
+}
+
+/* 標題樣式 */
+h2 {
+    color: #94b5b2; /* 淡綠藍色標題 */
+}
+
+/* 表單輸入欄位樣式 */
+input[type="text"], input[type="number"] {
+    width: 80%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #b3c8c9; /* 淡灰藍邊框 */
+    border-radius: 4px;
+    font-size: 16px;
+    box-sizing: border-box;
+    background-color: #f9f9f9; /* 淡灰背景 */
+    color: #585257; /* 深灰文字 */
+    transition: box-shadow 0.3s ease, border-color 0.3s ease; /* 平滑效果 */
+}
+
+input[type="text"]:focus, input[type="number"]:focus {
+    box-shadow: 0 0 10px #94b5b2;
+    border-color: #94b5b2;
+}
+
+
+
+/* 按鈕樣式 */
+.button {
+    padding: 10px 20px;
+    margin: 10px;
+    background-color: #94b5b2; /* 主色按鈕 */
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease; /* 加入平滑過渡 */
+}
+
+.button:hover {
+    background-color: #585257; /* 深灰色懸停效果 */
+    transform: scale(1.1); /* 放大效果 */
+}
+
+.button:active {
+    transform: scale(0.95); /* 點擊縮小效果 */
+}
+
+/* 比較文本樣式 */
+#comparison {
+    font-size: 18px;
+    margin: 20px 0;
+    font-weight: bold;
+    color: #585257; /* 深灰色比較文字 */
+    animation: fadeIn 0.5s ease-out;
+}
+
+/* 結果文字樣式 */
+#finalResult {
+    font-size: 20px;
+    font-weight: bold;
+    color: #94b5b2; /* 最終結果使用主色 */
+}
+
+/* 選項按鈕樣式 */
+.option-button {
+    position: relative;
+    width: 150px; /* 按鈕寬度 */
+    height: 150px; /* 按鈕高度 */
+    margin: 10px; /* 按鈕間距 */
+    background-size: cover; /* 背景圖案填充 */
+    background-position: center; /* 背景圖案居中 */
+    border: none; /* 去掉邊框 */
+    border-radius: 8px; /* 圓角按鈕 */
+    overflow: hidden; /* 隱藏超出部分 */
+    cursor: pointer; /* 手型游標 */
+}
+
+/* 透明文字層 */
+.option-button .overlay-text {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 10px;
+    background-color: rgba(0, 0, 0, 0.5); /* 黑色半透明背景 */
+    color: white; /* 文字顏色 */
+    font-size: 16px; /* 字體大小 */
+    text-align: center; /* 文字居中 */
+    pointer-events: none; /* 不影響按鈕點擊 */
+}
+
+/* 按鈕 hover 效果 */
+.option-button:hover .overlay-text {
+    background-color: rgba(0, 0, 0, 0.8); /* 懸停時加深透明背景 */
+}
+
+/* 按鈕縮放動畫 */
+.option-button:active {
+    transform: scale(0.95); /* 按下時縮小 5% */
+    transition: transform 0.1s ease; /* 縮放動畫過渡效果 */
+}
+
+/* 添加陰影效果，讓按鈕更立體 */
+.option-button {
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* 初始陰影 */
+    transition: transform 0.2s ease, box-shadow 0.2s ease; /* 添加過渡效果 */
+}
+
+.option-button:hover {
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.3); /* 懸停時加深陰影 */
+}
+
+/* 排行榜部分 */
+#finalResult {
+    font-size: 18px;
+    color: #585257; /* 深灰色 */
+    margin-top: 20px;
+}
+
+.ranking-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 15px 0;
+    padding: 10px;
+    border: 1px solid #b3c8c9; /* 淡灰邊框 */
+    border-radius: 8px;
+    background-color: #f9f9f9; /* 背景顏色 */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* 輕微陰影效果 */
+}
+
+.ranking-position {
+    font-size: 24px;
+    font-weight: bold;
+    color: #94b5b2; /* 主題顏色 */
+    margin-right: 20px;
+}
+
+.ranking-info {
+    flex-grow: 1;
+    padding: 10px;
+}
+
+.ranking-name {
+    font-size: 18px;
+    font-weight: bold;
+    color: #585257; /* 深灰色 */
+}
+
+.ranking-score {
+    font-size: 16px;
+    color: #94b5b2; /* 主題顏色 */
+}
+
+.ranking-image {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.logo {
+    display: block;
+    margin: 0 auto 20px; /* 水平置中，並在下方留空間 */
+    max-width: 100px;    /* 限制 logo 最大寬度 */
+    height: auto;        /* 自動調整高度，保持比例 */
+}
+
+/* 動畫效果 */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes popIn {
+    from {
+        transform: scale(0.5);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+@keyframes textGlow {
+    from {
+        text-shadow: 0 0 10px #94b5b2;
+    }
+    to {
+        text-shadow: 0 0 20px #b3c8c9;
+    }
+}
+
+@keyframes bounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+/* 美化下拉式選單 */
+.styled-select {
+    padding: 10px 20px;
+    font-size: 16px;
+    color: #585257;
+    background-color: #f1f1f1;
+    border: 1px solid #94b5b2;
+    border-radius: 4px;
+    appearance: none; /* 去除瀏覽器默認樣式 */
+    cursor: pointer;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+    min-width:  80%; /* 設置寬度 */
+}
+
+.styled-select:hover {
+    background-color: #e0e0e0;
+    border-color: #585257;
+}
+
+.styled-select:focus {
+    outline: none;
+    border-color: #94b5b2;
+    box-shadow: 0 0 5px rgba(148, 181, 178, 0.7);
+}
+
+.styled-select option {
+    background-color: #fff;
+    color: #585257;
+    padding: 10px;
+}
